@@ -1,9 +1,18 @@
 package com.company;
 
 public class Passenger {
-    int currentFloor;
-    int comingFloor;
-    Direction direction;
+    private int currentFloor;
+    private int comingFloor;
+    private Direction direction;
+
+    public Passenger() {
+    }
+
+    public Passenger(int currentFloor, int comingFloor) {
+        this.currentFloor = currentFloor;
+        this.comingFloor = comingFloor;
+        setDirection(currentFloor < comingFloor ? Direction.UP : Direction.DOWN);
+    }
 
     public int getCurrentFloor() {
         return currentFloor;
